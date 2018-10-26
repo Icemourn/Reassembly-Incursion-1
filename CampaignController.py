@@ -194,7 +194,6 @@ if __name__ == '__main__':
     print("WARNING, this shell runs eval on all arguments so its possible to do really dumb things. Don't do those please.")
     print("Enter \"help\" or \"?\" in the terminal to show a list of commands.")
 
-    # No save file handling:
     # Checking existance of 'IncursionSave' in current directory.
     if 'IncursionSave' not in listdir():
         print()
