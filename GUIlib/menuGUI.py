@@ -15,6 +15,7 @@ improve the user friendliness of the underlying commands.
 """
 
 from sys import argv
+from enum import Enum
 import PyQt5
 
 class ObjectGUI(MenuGUI):
@@ -27,6 +28,20 @@ class ObjectGUI(MenuGUI):
     # Classwide variables.
     campaign_title = "Incursion Campaign"
 
+    # Internal Enumerator class for state control.
+    class stateEnum(Enum):
+        """
+        State enumerator for GUI menus.
+        """
+        # Note: states are in camel case.
+        Null = 0
+        MainMenu = 1
+        Planets = 2
+        Players = 3
+        Ships = 4
+        Fleets = 5
+
+    # Classwide methods:
     def __init__(self):
         """
         GUI Object constructor.
@@ -42,15 +57,23 @@ class ObjectGUI(MenuGUI):
         self.height = 640
         self.width = 480
 
+        # Finite-state machine parameter:
+        self.state = stateEnum.Null
+
         # Initalizing GUI!
         self.initGUI()
 
     def initGUI(self):
         """
-        Initalizes GUI with inital class parameters.
+        Initalizes GUI with inital class parameters and sets state to
+        "MainMenu".
         """
+        # Window parameters
         self.setGeometry(self.left, self.top, self.width, self.height)
         self.setWindowTitle(self.title())
+
+        # State parameter
+        self.state = stateEnum.MainMenu
 
 # In case the user runs this library:
 if __name__ == '__main__':

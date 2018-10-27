@@ -7,7 +7,6 @@ Authors: Icemourn
 Last updated: ................................................ 26 Oct 18
 ------------------------------------------------------------------------
 
-
 Currently planning GUI:
 
 Flowchart (V 0.1):
@@ -20,13 +19,13 @@ Flowchart (V 0.1):
 	|	end_turn()
 	|	start_turn()
 	|
-	|	* planets (get_details('planets'))
+	|	* Planets (get_details('planets'))
 	|	|
 	|	|	add_planet()
 	|	|	add_connection()
 	|	|
 	|
-	|	* players (get_details('players'))
+	|	* Players (get_details('players'))
 	|	|
 	|	|	add_player()
 	|	|	materialize_resources()
@@ -34,7 +33,7 @@ Flowchart (V 0.1):
 	|	|	transfer_resources()
 	|	|
 	|	
-	|	* ships (get_details('ships'))
+	|	* Ships (get_details('ships'))
 	|	|
 	|	|	register_ship()
 	|	|	materialize_ship()
@@ -42,7 +41,7 @@ Flowchart (V 0.1):
 	|	|	make_ship()
 	|	|	scrap_ship()
 	|	|
-	|	|	* fleets (potentially extend get_details() to fleets?)
+	|	|	* Fleets (potentially extend get_details() to fleets?)
 	|	|	|
 	|	|	|	make_fleet()
 	|	|	|	disband_fleet()
@@ -52,5 +51,18 @@ Flowchart (V 0.1):
 	|	|
 	|		
 
+Development notes:
+
 get_details() is called at every indicated submenu.
 All menus and submenus will have a back button!
+
+I currently plan to make the GUI a state machine.
+Planned GUI states are:
+
+	MainMenu
+	Planets
+	Players
+	Ships
+	Fleets
+
+State machine flow will be same as the flowchart above.
